@@ -24,6 +24,12 @@ context('Select and purchase item', () => {
     })
 })
 
+context('Remove item from basket', () => {
+    it('Clicks on remove button on item page', () => {
+        cy.get('.inventory_container > div > div:eq(0) > .pricebar > button').click()
+    })
+})
+
 context('Check Title of item', () => {
     it('Check that item displays Sauce Labs Backpack', () => {
         cy.get('.inventory_item_name:eq(0)').contains('Sauce Labs Backpack')
@@ -35,7 +41,3 @@ context('Check Price of item', () => {
         cy.get('.inventory_item_price:eq(0)').contains('$29.99')
     })
 })
-
-
-
-//context('Remove item')

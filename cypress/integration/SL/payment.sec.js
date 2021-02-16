@@ -8,6 +8,4 @@ beforeEach( ()=> {
     cy.get('.inventory_container > div > div:eq(0) > .pricebar > button').click()
 })
 
-context('Checkout information')
-
 // context('Payment details')

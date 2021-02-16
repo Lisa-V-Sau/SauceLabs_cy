@@ -1,6 +1,9 @@
 {
   "projectId": "m84kq7",
   "env": {
-    "home": "https://www.saucedemo.com/"
-  }
+    "home": "https://www.saucedemo.com/",
+    "cart": "https://www.saucedemo.com/cart.html"
+  },
+  
+  "chromeWebSecurity": false
 }

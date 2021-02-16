@@ -7,6 +7,7 @@ beforeEach( ()=> {
     cy.get('#login-button').click()
 })
 
+
 describe('To Check items on list', () => {
     it('returns total of items on list', () => {
         cy.get('.inventory_container > div > div').eq(5)

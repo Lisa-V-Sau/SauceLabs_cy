@@ -1,3 +1,4 @@
+/// <reference types ="Cypress"/>
 class basket{
     username(){
         return cy.get('#user-name')

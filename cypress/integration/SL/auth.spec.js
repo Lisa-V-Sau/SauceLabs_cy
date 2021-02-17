@@ -1,3 +1,4 @@
+/// <reference types ="Cypress"/>
 import * as _ from 'lodash'
 import Auth from '../Page_object/auth'
 

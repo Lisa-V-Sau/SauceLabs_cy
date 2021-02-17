@@ -1,8 +1,10 @@
+/// <reference types ="Cypress"/>
 import { beforeEach } from 'mocha'
 import Basket from '../Page_object/basket'
 
+const basket = new Basket
+
 beforeEach( () => {
-    const basket = new Basket
     cy.visit(Cypress.env('home'))
     basket.username().type('standard_user')
     basket.password().type('secret_sauce')
@@ -11,7 +13,6 @@ beforeEach( () => {
 })
 
 context('Verify item', () => {
-    const basket = new Basket
     it('Navigates to basket and verifies item', () => {
         basket.verifyItem().click()
     })
@@ -22,14 +23,12 @@ beforeEach( () => {
 })
 
 context('Continue Shopping', () => {
-    const basket = new Basket
     it('Clicks on continue button which would take user back to inventory', () => {
         basket.cntBtn().click()
     })
 })
 
 context('Remove item from basket', () => {
-    const basket = new Basket
     it('Clicks on the remove button on cart page and remove items', () => {
         basket.rmBtn().click()
         basket.qtyCheck().eq(0)
@@ -37,7 +36,6 @@ context('Remove item from basket', () => {
 })
 
 context('Check Price of item', () => {
-    const basket = new Basket
     it('Checks that the price of item is 29.99', () => {
         basket.itemPrice().contains('29.99')
     })

@@ -1,22 +1,30 @@
 /// <reference types ="Cypress"/>
 import { beforeEach } from 'mocha'
+import Pricecheck from '../Page_object/item_price_check'
 
-beforeEach( ()=> {
-    cy.visit('https://www.saucedemo.com/')
-    cy.get('#user-name').type('standard_user')
-    cy.get('#password').type('secret_sauce')
-    cy.get('#login-button').click()
-    cy.get('.inventory_container > div > div:eq(0) > .pricebar > button').click()
+const pricecheck = new Pricecheck
+
+describe('Logs into saucedemo and selects item', () => {
+    it('Logs in and seleccts item from list', ()=> {
+        cy.visit(Cypress.env('home'))
+        pricecheck.username().type('standard_user')
+        pricecheck.password().type('secret_sauce')
+        pricecheck.submitDetails().click()
+        pricecheck.firstItemOnList().click()
+    })
 })
 
 context('Check Price of item', () => {
     it('Checks that the price of item is $29.99', () => {
-        cy.get('.inventory_item_price:eq(0)').contains('$29.99')
+        cy.get('.inventory_item_price:eq(0)').contains('29.99')
     })
 })
 
 context('Checkout information', () => {
     it('checks item price in basket against that of checkout page', () => {
-        cy.get('')
+        cy.visit(Cypress.env('chckoutStepOne'))
+        pricecheck.firstName().type('user')
+        pricecheck.lastName().type('user')
+        pricecheck.postCode().type('sw1 2de')
     })
 })

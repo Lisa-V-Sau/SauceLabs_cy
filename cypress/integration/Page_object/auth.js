@@ -1,3 +1,4 @@
+/// <reference types ="Cypress"/>
 class auth{
     username(){
         return cy.get('#user-name')

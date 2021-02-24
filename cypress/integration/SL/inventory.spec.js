@@ -4,6 +4,16 @@ import Inventory from '../Page_object/inventory'
 
 const inventory = new Inventory
 
+//this is a test for viewport: mobile mode
+describe('Viewport', () => {
+    context('iOS view', () => {
+        beforeEach(() => {
+            cy.viewport(375, 667)
+        })
+    })
+})
+
+
 beforeEach( ()=> {
     cy.visit(Cypress.env('home'))
     inventory.username().type('standard_user')

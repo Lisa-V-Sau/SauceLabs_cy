@@ -1,6 +1,15 @@
 /// <reference types ="Cypress"/>
 import { beforeEach } from 'mocha'
 
+//this is a test for viewport: mobile mode
+describe('Viewport', () => {
+    context('iOS view', () => {
+        beforeEach(() => {
+            cy.viewport(375, 667)
+        })
+    })
+})
+
 beforeEach( ()=> {
     cy.visit('https://www.saucedemo.com/')
     cy.get('#user-name').type('standard_user')

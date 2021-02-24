@@ -4,6 +4,16 @@ import Basket from '../Page_object/basket'
 
 const basket = new Basket
 
+//this is a test for viewport: mobile mode
+describe('Viewport', () => {
+    context('iOS view', () => {
+        beforeEach(() => {
+            cy.viewport(375, 667)
+        })
+    })
+})
+
+
 beforeEach( () => {
     cy.visit(Cypress.env('home'))
     basket.username().type('standard_user')

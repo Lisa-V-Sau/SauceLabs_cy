@@ -4,6 +4,16 @@ import Pricecheck from '../Page_object/item_price_check'
 
 const pricecheck = new Pricecheck
 
+//this is a test for viewport: mobile mode
+describe('Viewport', () => {
+    context('iOS view', () => {
+        beforeEach(() => {
+            cy.viewport(375, 667)
+        })
+    })
+})
+
+
 describe('Logs into saucedemo and selects item', () => {
     it('Logs in and seleccts item from list', ()=> {
         cy.visit(Cypress.env('home'))

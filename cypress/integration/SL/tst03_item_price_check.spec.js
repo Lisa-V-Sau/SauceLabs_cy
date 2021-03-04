@@ -1,3 +1,5 @@
+// This is the third test within this package - it selects the items and checks it against the checkout price to ensure that the price is correct upon payment
+
 /// <reference types ="Cypress"/>
 import { beforeEach } from 'mocha'
 import Pricecheck from '../Page_object/item_price_check'
@@ -30,11 +32,12 @@ context('Check Price of item', () => {
     })
 })
 
-context('Checkout information', () => {
-    it('checks item price in basket against that of checkout page', () => {
-        cy.visit(Cypress.env('chckoutStepOne'))
-        pricecheck.firstName().type('user')
-        pricecheck.lastName().type('user')
-        pricecheck.postCode().type('sw1 2de')
-    })
-})
+// **Code needs to be revisted**
+// context('Checkout information', () => {
+//     it('checks item price in basket against that of checkout page', () => {
+//         cy.visit(Cypress.env('chckoutStepOne'))
+//         pricecheck.firstName().type('user')
+//         pricecheck.lastName().type('user')
+//         pricecheck.postCode().type('sw1 2de')
+//     })
+// })

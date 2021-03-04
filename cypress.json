@@ -5,7 +5,5 @@
      "cart":"https://www.saucedemo.com/cart.html",
      "chckoutStepOne":"https://www.saucedemo.com/checkout-step-one.html"
   },
-  "chromeWebSecurity":false,
-  "viewportWidth":375,
-  "viewportHeight":667
+  "chromeWebSecurity":false
 }

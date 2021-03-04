@@ -6,6 +6,7 @@ describe('Viewport', () => {
     context('iOS view', () => {
         beforeEach(() => {
             cy.viewport(375, 667)
+            cy.viewport(768, 1024)
         })
     })
 })

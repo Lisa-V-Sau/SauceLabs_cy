@@ -1,4 +1,4 @@
-import { smokeTest } from './smoke-spec'
+import { smokeTest } from '../Page_object/smoke'
 
 Cypress._.each(['macbook-15', 'iphone-6'], viewport => {
   it(`works on ${viewport}`, () => {

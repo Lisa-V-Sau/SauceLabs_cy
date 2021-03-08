@@ -1,0 +1,19 @@
+{
+  "name": "sl",
+  "version": "1.0.0",
+  "description": "Cypress test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LS",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^6.4.0",
+    "mocha": "^8.2.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.168",
+    "eslint-plugin-cypress": "^2.11.2"
+  }
+}

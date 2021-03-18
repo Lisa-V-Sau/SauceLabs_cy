@@ -2,7 +2,7 @@
 import Auth from './auth';
 import Inventory from './inventory';
 
-const auth = new Auth();
+const auth = new Auth;
 const inventory = new Inventory();
 
 export const smokeTest = () => {

@@ -4,3 +4,7 @@ cypress.json
 /fixtures
 /plugins
 /support
+.vscode
+.gitignore
+cypress/screenshots
+cypress/videos

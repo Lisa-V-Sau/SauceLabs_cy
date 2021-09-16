@@ -1,9 +1,5 @@
 // First Test within folder - starting from Login Screen
 /// <reference types ="Cypress"/>
-import * as _ from 'lodash'
-import Auth from '../Page_object/auth'
-
-const auth = new Auth
 
 // Current Place Holder
 describe('Nav Menus', () => {
@@ -32,16 +28,16 @@ describe('Nav Menus', () => {
 describe('Log into Swag Labs', () => {
     it('It Logs user in with available credentials', () => {
         cy.visit(Cypress.env('home'))
-        auth.username().type('standard_user')
-        auth.password().type('secret_sauce')
-        auth.submitDetails().click()
+        cy.userName().type('standard_user')
+        cy.password().type('secret_sauce')
+        cy.loginButton().click()
     })
 })
 
 // Page objects can be found in auth.js
 context('logout', () => {
     it('Navigates to burger menu and clicks on logout', () => {
-        auth.burgerMenu().click()
-        auth.logOutSlider().click()
+        cy.burgerMenu().click()
+        cy.logOutSlider().click()
     })
 })

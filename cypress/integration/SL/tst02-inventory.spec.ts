@@ -1,11 +1,6 @@
 // This is the second test within this package - it returns number of items and also selects first item on page.
 
 /// <reference types ="Cypress"/>
-import { beforeEach } from 'mocha'
-import Inventory from '../Page_object/inventory'
-
-// var for Inventory Page_objects
-const inventory = new Inventory
 
 //A temporary viewport placeholder 
 //this is a test for viewport: mobile mode
@@ -22,16 +17,16 @@ describe('Viewport', () => {
 // Page objects can be found in inventory.js
 beforeEach( () => {
     cy.visit(Cypress.env('home'))
-    inventory.username().type('standard_user')
-    inventory.password().type('secret_sauce')
-    inventory.submitDetails().click()
+    cy.userName().type('standard_user')
+    cy.password().type('secret_sauce')
+    cy.loginButton().click()
 })
 
 // This test returns total number of items within the container
 // Page objects can be found in inventory.js
 describe('To Check items on list', () => {
     it('returns total of items on list', () => {
-        inventory.container().eq(5)
+        cy.inventoryContainer().eq(5)
     })
 })
 
@@ -40,8 +35,8 @@ describe('To Check items on list', () => {
 // Page objects can be found in inventory.js
 context('Select and purchase item', () => {
     it('Selects first and adds to basket', () => {
-        inventory.addItemBtn().click()
-        inventory.itemAddedbtn().then(($itemAdded) => {
+        cy.inventoryFirstItem().click()
+        cy.inventoryFirstItemBtn().then(($itemAdded) => {
               const itemAddedtxt = $itemAdded.text()
               cy.log(itemAddedtxt)
               expect(itemAddedtxt).eq('REMOVE')
@@ -53,7 +48,7 @@ context('Select and purchase item', () => {
 // Page objects can be found in inventory.js
 context('Remove item from basket', () => {
     it('Clicks on remove button on item page', () => {
-        inventory.rmvBtn().click()
+        cy.inventoryFirstItemRmvBtn().click()
     })
 })
 
@@ -61,7 +56,7 @@ context('Remove item from basket', () => {
 // Page objects can be found in inventory.js
 context('Check Title of item', () => {
     it('Check that item displays Sauce Labs Backpack', () => {
-        inventory.chckTitle().contains('Sauce Labs Backpack')
+        cy.inventoryFirstItemChckTitle().contains('Sauce Labs Backpack')
     })
 })
 
@@ -69,6 +64,6 @@ context('Check Title of item', () => {
 // Page Objects can be found in inventory.js
 context('Check Price of item', () => {
     it('Checks that the price of item is $29.99', () => {
-        inventory.chckItemPrice().contains('29.99')
+        cy.inventoryFirstItemChckItemPrice().contains('29.99')
     })
 })

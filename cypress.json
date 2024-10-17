@@ -1,8 +1,0 @@
-{
-    "env":{
-       "home":"https://www.saucedemo.com/",
-       "cart":"https://www.saucedemo.com/cart.html",
-       "chckoutStepOne":"https://www.saucedemo.com/checkout-step-one.html"
-    },
-    "chromeWebSecurity":false
-  }

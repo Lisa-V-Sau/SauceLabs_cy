@@ -53,7 +53,7 @@ describe('Credentials Login Test', () => {
         .should('contain', 'Epic sadface: ', 'Password is required')
     })
 
-    it.only('TC05: Name sort in alphebetical order asc & dec', () => {
+    it('TC05: Name sort in alphebetical order asc & dec', () => {
         cy.get('[data-test="username"]').click().type(su)
         cy.get('[data-test="password"]').click().type(pw)
         cy.get('[id="login-button"]').click()
@@ -63,5 +63,21 @@ describe('Credentials Login Test', () => {
         cy.get('[class="product_sort_container"]').select('Name (A to Z)').should('have.value', 'az')
         cy.get('[class="product_sort_container"]').select('Price (low to high)').should('have.value', 'lohi')
         cy.get('[class="product_sort_container"]').select('Price (high to low)').should('have.value', 'hilo')
+    })
+
+    it.only('TC06: Adding and removing items from checkout', () => {
+        cy.get('[data-test="username"]').click().type(su)
+        cy.get('[data-test="password"]').click().type(pw)
+        cy.get('[id="login-button"]').click()
+        cy.url()
+        .should('equal', 'https://www.saucedemo.com/v1/inventory.html')
+        cy.get('.inventory_container > div > div:eq(0) > .pricebar > button').click()
+        cy.get('[id="shopping_cart_container"]').click()
+        cy.url()
+        .should('equal', 'https://www.saucedemo.com/v1/cart.html')
+        cy.get('.cart_item > .cart_quantity')
+        .invoke('text')
+        .then(text => +text)
+        .should('eql', 1)
     })
 })

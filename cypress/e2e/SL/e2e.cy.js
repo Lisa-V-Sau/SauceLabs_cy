@@ -65,7 +65,7 @@ describe('Credentials Login Test', () => {
         cy.get('[class="product_sort_container"]').select('Price (high to low)').should('have.value', 'hilo')
     })
 
-    it.only('TC06: Adding and removing items from checkout', () => {
+    it('TC06: Adding and removing items from checkout', () => {
         cy.get('[data-test="username"]').click().type(su)
         cy.get('[data-test="password"]').click().type(pw)
         cy.get('[id="login-button"]').click()

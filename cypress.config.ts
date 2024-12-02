@@ -1,6 +1,7 @@
 import { defineConfig } from 'cypress'
 
 export default defineConfig({
+  projectId: 'm84kq7',
   env: {
     home: 'https://www.saucedemo.com/',
     cart: 'https://www.saucedemo.com/cart.html',

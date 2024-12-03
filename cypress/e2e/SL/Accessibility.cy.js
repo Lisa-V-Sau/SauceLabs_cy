@@ -1,3 +1,4 @@
+
 describe('Sauce Labs Demo Accessibility Testing', () => {
     const su = 'standard_user'
     const lu = 'locked_out_user'
@@ -13,6 +14,26 @@ describe('Sauce Labs Demo Accessibility Testing', () => {
     })
 
     it('TC01: Login page accessbility testing', () => {
+        // cy.checkAlly() can be used only once cy.injectAxe() is called
+        // cy.checkAlly() also takes parameters
+        // The following parameters will allow for temporary by pass
+        cy.checkA11y(null, 
+            // {runOnly: {
+            //     type: 'tag',
+            //     values: ['wcag2a','wcag2aa', 'cat.*']
+            // },
+             rules: {
+                 'color-contrast': { enabled: true },
+                 'valid-lang': { enabled: true }
+             },
+             tags: {
+                 'wcag2a': { enabled: true },
+                 'wcag411': { enabled: true },
+                 'cat.parsing': { enabled: true },
+                 'cat.keyboard': { enabled: true },
+                 'best-practice': { enabled: true }
+             }}
+        )
         
     })
 })

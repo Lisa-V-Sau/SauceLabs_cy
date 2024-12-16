@@ -1,0 +1,18 @@
+Issues observed during functional exploratory testing:
+1. Chrome Browser security notification popup to highlight that password in use has been exposed to the public.
+2. There is not an option to add additional numbers for each of the items.
+3. Inventory name for Red Tshirt is named as "Test.allTheThings()".
+4. Details entered on Info page is deleted when page is refreshed.
+5. It is possible to checkout with Zero items added to cart.
+6. It is possible to complete transaction without entering details on info page.
+
+
+Issues observed during non-functional exploratory testing:
+Accessibility: 
+1. Login page: missing alternative text, labels, missing level heading.
+2. Products page: empty links language missing or invalid, contrast errors, missing levels, redundent links, footer navigation issues, aria not implemented.
+3. Cart: empty links language missing or invalid, contrast errors, missing levels, redundent links, footer navigation issues, aria not implemented.
+4. Info: empty links language missing or invalid, contrast errors, missing levels, redundent links, footer navigation issues, aria not implemented.
+5. Checkout: empty links language missing or invalid, contrast errors, missing levels, redundent links, footer navigation issues, aria not implemented.
+6. Completion: empty links language missing or invalid, contrast errors, missing levels, redundent links, footer navigation issues, aria not implemented.
+

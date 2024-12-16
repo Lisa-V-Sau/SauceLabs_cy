@@ -1,0 +1,9 @@
+In this folder contains the following:
+    * Test plan
+    * Test results
+    * Manual test cases
+    * Automation tests
+
+Running automation tests:
+    * Navigate to automationTests folder and open cypress folder and run tests using the following command npx cypress/e2e/FOLLOWEDBYTHEFILENAME
+    NOTE: If this is your first time running these tests you will have to run the following command npx cypress
